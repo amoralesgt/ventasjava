@@ -150,6 +150,13 @@ public class Controlador extends HttpServlet {
                             cl.setDni(dni);
                             cl=cdao.buscar(dni);
                             request.setAttribute("cl", cl);
+                        break;
+                        case "BuscarProducto":
+                            int id=Integer.parseInt(request.getParameter("codigoproducto")); 
+                            pr.setId(id);
+                            pr=pdao.buscar(id);
+                            request.setAttribute("pr", pr);
+                        break;
                      }
                 request.getRequestDispatcher("Ventas.jsp").forward(request, response);
             }

@@ -35,11 +35,11 @@
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-6 d-flex">
-                                    <input type="text" name="codigoproducto" class="form-control" placeholder="Codigo">
-                                    <input type="submit" name="accion" value="Buscar" class="btn btn-outline-info">
+                                    <input type="text" name="codigoproducto" value="${pr.getId()}" class="form-control" placeholder="Codigo">
+                                    <input type="submit" name="accion" value="BuscarPorducto" class="btn btn-outline-info">
                                 </div>
                                 <div class="col-sm-6">
-                                    <input type="text" name="nombresproducto" class="form-control">
+                                    <input type="text" name="nombresproducto" value="${pr.getNombres()}" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group d-flex">

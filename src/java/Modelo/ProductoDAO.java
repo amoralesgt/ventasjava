@@ -15,6 +15,24 @@ public class ProductoDAO {
     ResultSet rs;
     int r;
     
+    public Producto buscar(int id) {
+        Producto pr=new Producto();
+        String sql="select * from producto where IdProducto="+id;
+        try{
+            con=cn.Conexion();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()){
+                pr.setId(rs.getInt(1));
+                pr.setNombres(rs.getString(2));
+                pr.setPrecio(rs.getDouble(3));
+                pr.setStock(rs.getInt(4));
+                pr.setEstado(rs.getString(5));
+            }
+        }catch (Exception e){
+        }
+        return pr;
+    }
     //Operaciones CRUD
     
     public List listar(){
