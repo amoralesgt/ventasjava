@@ -13,8 +13,8 @@
         <title>Ingreso a Sistema</title>
     </head>
     <body>
-        <nav class="navbar navbar-expand-lg navbar-light bg-info">
-  <a class="navbar-brand" href="#">Inicio</a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#"><img src="img/logo.jpg" alt="50" width="50"/></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -51,7 +51,7 @@
         </div>
   </div>
 </nav>
-              <div class="m-4" style="height: 550px;">
+              <div class="m-4 d-flex" style="height: 550px;">
                   <iframe name="myFrame" style="height: 100%; width: 100%; border: none"></iframe>
               </div>
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

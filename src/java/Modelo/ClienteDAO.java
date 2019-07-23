@@ -15,6 +15,25 @@ public class ClienteDAO {
     ResultSet rs;
     int r;
     
+    public Cliente buscar(String dni) {
+        Cliente c=new Cliente();
+        String sql="select * from cliente where dni="+dni;
+        try{
+            con=cn.Conexion();
+            ps=con.prepareStatement(sql);
+            rs=ps.executeQuery();
+            while (rs.next()){
+                c.setId(rs.getInt(1));
+                c.setDni(rs.getString(2));
+                c.setNom(rs.getString(3));
+                c.setDir(rs.getString(4));
+                c.setEst(rs.getNString(5));
+            }
+        }catch (Exception e){
+        }
+        return c;
+    }
+    
     //Operaciones CRUD
     
     public List listar(){

@@ -25,6 +25,7 @@ public class Controlador extends HttpServlet {
     Usuario us=new Usuario();
     UsuarioDAO udao=new UsuarioDAO();
     int idu;
+    
     // Variables de Producto
     Producto pr=new Producto();
     ProductoDAO pdao=new ProductoDAO();
