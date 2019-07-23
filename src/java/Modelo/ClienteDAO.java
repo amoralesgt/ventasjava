@@ -16,22 +16,22 @@ public class ClienteDAO {
     int r;
     
     public Cliente buscar(String dni) {
-        Cliente c=new Cliente();
-        String sql="select * from cliente where dni="+dni;
+        Cliente cl=new Cliente();
+        String sql="select * from cliente where Dni="+dni;
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);
             rs=ps.executeQuery();
             while (rs.next()){
-                c.setId(rs.getInt(1));
-                c.setDni(rs.getString(2));
-                c.setNom(rs.getString(3));
-                c.setDir(rs.getString(4));
-                c.setEst(rs.getNString(5));
+                cl.setId(rs.getInt(1));
+                cl.setDni(rs.getString(2));
+                cl.setNom(rs.getString(3));
+                cl.setDir(rs.getString(4));
+                cl.setEst(rs.getString(5));
             }
         }catch (Exception e){
         }
-        return c;
+        return cl;
     }
     
     //Operaciones CRUD
