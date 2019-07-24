@@ -156,7 +156,7 @@ public class Controlador extends HttpServlet {
                             pr.setId(id);
                             pr=pdao.buscar(id);
                             request.setAttribute("pr", pr);
-                        break;
+                        break;             
                      }
                 request.getRequestDispatcher("Ventas.jsp").forward(request, response);
             }

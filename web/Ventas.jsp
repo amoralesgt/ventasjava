@@ -34,23 +34,23 @@
                                 <label> Datos Producto</label>
                             </div>
                             <div class="form-group d-flex">
-                                <div class="col-sm-6 d-flex">
+                                <div class="col-sm-7 d-flex">
                                     <input type="text" name="codigoproducto" value="${pr.getId()}" class="form-control" placeholder="Codigo">
-                                    <input type="submit" name="accion" value="BuscarPorducto" class="btn btn-outline-info">
+                                    <input type="submit" name="accion" value="BuscarProducto" class="btn btn-outline-info">
                                 </div>
-                                <div class="col-sm-6">
+                                <div class="col-sm-5">
                                     <input type="text" name="nombresproducto" value="${pr.getNombres()}" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group d-flex">
                                 <div class="col-sm-4">
-                                    <input type="number" name="precio" placeholder="Precio" class="form-control">
+                                    <input type="number" name="precio" value="${pr.getPrecio()}" placeholder="Precio" class="form-control">
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="number" name="cantidad" placeholder="Cantidad" class="form-control">
                                 </div>
                                 <div class="col-sm-4">
-                                    <input type="number" name="stock" placeholder="Stock" class="form-control">
+                                    <input type="number" name="stock" value="${pr.getStock()}"placeholder="Stock" class="form-control">
                                 </div>
                             </div>
                             <div class="form-group">
