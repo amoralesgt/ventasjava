@@ -7,8 +7,10 @@ import Modelo.Producto;
 import Modelo.ProductoDAO;
 import Modelo.Usuario;
 import Modelo.UsuarioDAO;
+import Modelo.Venta;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -40,6 +42,11 @@ public class Controlador extends HttpServlet {
     Cliente cl=new Cliente();
     ClienteDAO cdao=new ClienteDAO();
     int idc;
+    
+    // Variables de Venta
+    
+    Venta ve=new Venta();
+    List<Venta>lista=new ArrayList<>();
     
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -156,7 +163,12 @@ public class Controlador extends HttpServlet {
                             pr.setId(id);
                             pr=pdao.buscar(id);
                             request.setAttribute("pr", pr);
-                        break;             
+                        break;
+                        case "Agregar":
+                            
+                        break;          
+                        default:
+                            request.getRequestDispatcher("Ventas.jsp").forward(request, response);
                      }
                 request.getRequestDispatcher("Ventas.jsp").forward(request, response);
             }

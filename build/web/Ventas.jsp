@@ -47,7 +47,7 @@
                                     <input type="number" name="precio" value="${pr.getPrecio()}" placeholder="Precio" class="form-control">
                                 </div>
                                 <div class="col-sm-4">
-                                    <input type="number" name="cantidad" placeholder="Cantidad" class="form-control">
+                                    <input type="number" name="cantidad" placeholder="1" class="form-control">
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="number" name="stock" value="${pr.getStock()}"placeholder="Stock" class="form-control">
