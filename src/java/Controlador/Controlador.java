@@ -47,6 +47,12 @@ public class Controlador extends HttpServlet {
     
     Venta ve=new Venta();
     List<Venta>lista=new ArrayList<>();
+    int item;
+    int cod;
+    String desc;
+    double prec;
+    int cant;
+    double subtotal;
     
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -165,7 +171,19 @@ public class Controlador extends HttpServlet {
                             request.setAttribute("pr", pr);
                         break;
                         case "Agregar":
-                            
+                            item = item+1;
+                            cod = pr.getId();
+                            desc = request.getParameter("nombresproducto");
+                            prec = Double.parseDouble(request.getParameter("precio"));
+                            cant = Integer.parseInt(request.getParameter("cantidad"));
+                            subtotal = prec*cant;
+                            ve.setItem(item);
+                            ve.setId(cod);
+                            ve.setDescP(desc);
+                            ve.setPrecio(prec);
+                            ve.setCantidad(cant);
+                            ve.setSubtotal(subtotal);
+                            lista.add(ve);
                         break;          
                         default:
                             request.getRequestDispatcher("Ventas.jsp").forward(request, response);
