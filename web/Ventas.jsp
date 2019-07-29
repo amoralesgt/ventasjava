@@ -4,6 +4,7 @@
     Author     : ammac
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -82,15 +83,17 @@
                                 </tr>
                             </thead>
                             <tbody>
+                            <c:forEach var="list" items="${lista}">
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>${list.getItem()}</td>
+                                    <td>${list.getcod()}</td>
+                                    <td>${list.getdesc()}</td>
+                                    <td>${list.getprec()}</td>
+                                    <td>${list.getcant()}</td>
+                                    <td>${list.getsubtotal()}</td>
                                     <td></td>
                                 </tr>
+                                </c:forEach>
                             </tbody>
                         </table>
                     </div>

@@ -184,6 +184,7 @@ public class Controlador extends HttpServlet {
                             ve.setCantidad(cant);
                             ve.setSubtotal(subtotal);
                             lista.add(ve);
+                            request.setAttribute("lista", lista);
                         break;          
                         default:
                             request.getRequestDispatcher("Ventas.jsp").forward(request, response);
