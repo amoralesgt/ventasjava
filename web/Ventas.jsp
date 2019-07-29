@@ -48,7 +48,7 @@
                                     <input type="number" name="precio" value="${pr.getPrecio()}" placeholder="Precio" class="form-control">
                                 </div>
                                 <div class="col-sm-4">
-                                    <input type="number" name="cantidad" placeholder="1" class="form-control">
+                                    <input type="number" name="cantidad" value=1 class="form-control">
                                 </div>
                                 <div class="col-sm-4">
                                     <input type="number" name="stock" value="${pr.getStock()}"placeholder="Stock" class="form-control">
@@ -83,15 +83,19 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <c:forEach var="list" items="${lista}">
+                            <c:forEach var="list" items="${ls}">
                                 <tr>
                                     <td>${list.getItem()}</td>
-                                    <td>${list.getcod()}</td>
-                                    <td>${list.getdesc()}</td>
-                                    <td>${list.getprec()}</td>
-                                    <td>${list.getcant()}</td>
-                                    <td>${list.getsubtotal()}</td>
-                                    <td></td>
+                                    <td>${list.getId()}</td>
+                                    <td>${list.getDescP()}</td>
+                                    <td>${list.getPrecio()}</td>
+                                    <td>${list.getCantidad()}</td>
+                                    <td>${list.getSubtotal()}</td>
+                                    <td>
+                                        <input type="submit" name="accion" value="Editar" class="btn btn-warning">
+                                        <input type="submit" name="accion" value="Quitar" class="btn btn-danger">
+                                        
+                                    </td>
                                 </tr>
                                 </c:forEach>
                             </tbody>

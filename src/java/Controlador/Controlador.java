@@ -169,14 +169,16 @@ public class Controlador extends HttpServlet {
                             pr.setId(id);
                             pr=pdao.buscar(id);
                             request.setAttribute("pr", pr);
+                            request.setAttribute("ls", lista);
                         break;
                         case "Agregar":
                             item = item+1;
                             cod = pr.getId();
-                            desc = request.getParameter("nombresproducto");
+                            desc=request.getParameter("nombresproducto");
                             prec = Double.parseDouble(request.getParameter("precio"));
                             cant = Integer.parseInt(request.getParameter("cantidad"));
                             subtotal = prec*cant;
+                            ve=new Venta();
                             ve.setItem(item);
                             ve.setId(cod);
                             ve.setDescP(desc);
@@ -184,7 +186,7 @@ public class Controlador extends HttpServlet {
                             ve.setCantidad(cant);
                             ve.setSubtotal(subtotal);
                             lista.add(ve);
-                            request.setAttribute("lista", lista);
+                            request.setAttribute("ls", lista);
                         break;          
                         default:
                             request.getRequestDispatcher("Ventas.jsp").forward(request, response);
