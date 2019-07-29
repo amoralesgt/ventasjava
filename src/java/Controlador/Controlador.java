@@ -53,6 +53,7 @@ public class Controlador extends HttpServlet {
     double prec;
     int cant;
     double subtotal;
+    double totalPagar;
     
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -172,6 +173,7 @@ public class Controlador extends HttpServlet {
                             request.setAttribute("ls", lista);
                         break;
                         case "Agregar":
+                            totalPagar = 0.0;
                             item = item+1;
                             cod = pr.getId();
                             desc=request.getParameter("nombresproducto");
@@ -186,6 +188,10 @@ public class Controlador extends HttpServlet {
                             ve.setCantidad(cant);
                             ve.setSubtotal(subtotal);
                             lista.add(ve);
+                            for(int i = 0; i< lista.size(); i++){
+                                totalPagar=totalPagar +lista.get(i).getSubtotal();
+                            }
+                            request.setAttribute("tp", totalPagar);
                             request.setAttribute("ls", lista);
                         break;          
                         default:

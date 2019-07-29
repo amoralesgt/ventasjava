@@ -101,10 +101,13 @@
                             </tbody>
                         </table>
                     </div>
-                        <div class="card-footer">
-                            <div>
+                        <div class="card-footer d-flex">
+                            <div class="col-sm-6">
                                 <input type="submit" name="accion" value="Procesar" class="btn btn-success">
                                 <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
+                            </div>
+                            <div class="col-sm-3 ml-auto">
+                                <input type="text" name="txtTotal" value="${tp}" class="form-control">
                             </div>
                         </div>
                 </div>  
