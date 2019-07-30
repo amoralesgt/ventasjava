@@ -171,8 +171,10 @@ public class Controlador extends HttpServlet {
                             pr=pdao.buscar(id);
                             request.setAttribute("pr", pr);
                             request.setAttribute("ls", lista);
+                            request.setAttribute("tp", totalPagar);
                         break;
                         case "Agregar":
+                            request.setAttribute("cl", cl);
                             totalPagar = 0.0;
                             item = item+1;
                             cod = pr.getId();

@@ -107,7 +107,7 @@
                                 <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
                             </div>
                             <div class="col-sm-3 ml-auto">
-                                <input type="text" name="txtTotal" value="${tp}" class="form-control">
+                                <input type="text" name="txtTotal" value="Q. ${tp}0" class="form-control">
                             </div>
                         </div>
                 </div>  
