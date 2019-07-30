@@ -188,7 +188,7 @@ public class Controlador extends HttpServlet {
                             subtotal = prec*cant;
                             ve=new Venta();
                             ve.setItem(item);
-                            ve.setId(cod);
+                            ve.setIdproducto(cod);
                             ve.setDescP(desc);
                             ve.setPrecio(prec);
                             ve.setCantidad(cant);
@@ -199,7 +199,27 @@ public class Controlador extends HttpServlet {
                             }
                             request.setAttribute("tp", totalPagar);
                             request.setAttribute("ls", lista);
-                        break;          
+                        break;
+                        case "Procesar":
+                            //Guardar la Venta
+                            ve.setIdcliente(cl.getId());
+                            ve.setIdusuario(4);
+                            ve.setNumserie(numeroserie);
+                            ve.setFecha("2019-07-29");
+                            ve.setMonto(totalPagar);
+                            ve.setEstado("1");
+                            vdao.guardarVenta(ve);
+                            //Guardar detalle de Venta
+                            int idv=Integer.parseInt(vdao.IdVentas());
+                            for (int i =0; i < lista.size(); i++){
+                                ve=new Venta();
+                                ve.setId(idv);
+                                ve.setIdproducto(lista.get(i).getIdproducto());
+                                ve.setCantidad(lista.get(i).getCantidad());
+                                ve.setPrecio(lista.get(i).getPrecio());
+                                vdao.guardarDetalleventa(ve);                              
+                            }
+                        break;  
                         default:
                             numeroserie=vdao.GenerarSerie();
                             if(numeroserie==null){
