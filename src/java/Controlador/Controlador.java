@@ -1,6 +1,7 @@
 
 package Controlador;
 
+import Config.GenerarSerie;
 import Modelo.Cliente;
 import Modelo.ClienteDAO;
 import Modelo.Producto;
@@ -8,6 +9,7 @@ import Modelo.ProductoDAO;
 import Modelo.Usuario;
 import Modelo.UsuarioDAO;
 import Modelo.Venta;
+import Modelo.VentaDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -55,6 +57,8 @@ public class Controlador extends HttpServlet {
     double subtotal;
     double totalPagar;
     
+    String numeroserie;
+    VentaDAO vdao=new VentaDAO();
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -197,6 +201,17 @@ public class Controlador extends HttpServlet {
                             request.setAttribute("ls", lista);
                         break;          
                         default:
+                            numeroserie=vdao.GenerarSerie();
+                            if(numeroserie==null){
+                                numeroserie="00000001";
+                                request.setAttribute("nserie",numeroserie);
+                            }
+                            else{
+                                int incrementar=Integer.parseInt(numeroserie);
+                                GenerarSerie gs=new GenerarSerie();
+                                numeroserie=gs.NumeroSerie(incrementar);
+                                request.setAttribute("nserie", numeroserie);
+                            }
                             request.getRequestDispatcher("Ventas.jsp").forward(request, response);
                      }
                 request.getRequestDispatcher("Ventas.jsp").forward(request, response);

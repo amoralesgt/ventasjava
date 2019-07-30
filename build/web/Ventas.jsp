@@ -67,7 +67,7 @@
                         
                         <div class="d-flex col-sm-5 ml-auto">
                             <label>Nro.Serie:</label>
-                            <input type="text" name="NoSerie" class="form-control">
+                            <input type="text" name="NoSerie" value="${nserie}" class="form-control">
                         </div>
                         <br>
                         <table class="table table-hover">
