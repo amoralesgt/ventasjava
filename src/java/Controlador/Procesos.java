@@ -18,7 +18,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author ammac
  */
-public class Validar extends HttpServlet {
+public class Procesos extends HttpServlet {
 
     UsuarioDAO udao=new UsuarioDAO();
     Usuario us=new Usuario();

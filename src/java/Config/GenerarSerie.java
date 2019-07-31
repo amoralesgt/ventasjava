@@ -9,7 +9,7 @@ public class GenerarSerie {
     public String NumeroSerie(int dato){
         
         this.dato=dato+1;
-        if((this.dato>=10000000)&&(this.dato<=100000000)){
+        if((this.dato>=1)&&(this.dato<=100000000)){
             numero=""+this.dato;
         }
         if((this.dato>=1000000)&&(this.dato<=10000000)){

@@ -168,6 +168,7 @@ public class Controlador extends HttpServlet {
                             cl.setDni(dni);
                             cl=cdao.buscar(dni);
                             request.setAttribute("cl", cl);
+                            request.setAttribute("nserie", numeroserie);
                         break;
                         case "BuscarProducto":
                             int id=Integer.parseInt(request.getParameter("codigoproducto")); 
@@ -177,6 +178,7 @@ public class Controlador extends HttpServlet {
                             request.setAttribute("lista", lista);
                             request.setAttribute("tp", totalPagar);
                             request.setAttribute("cl", cl);
+                            request.setAttribute("nserie", numeroserie);
                         break;
                         case "Agregar":
                             request.setAttribute("cl", cl);
@@ -200,6 +202,7 @@ public class Controlador extends HttpServlet {
                             }
                             request.setAttribute("tp", totalPagar);
                             request.setAttribute("lista", lista);
+                            request.setAttribute("nserie", numeroserie);
                         break;
                         case "Procesar":
                             //Guardar la Venta
@@ -210,7 +213,9 @@ public class Controlador extends HttpServlet {
                             ve.setMonto(totalPagar);
                             ve.setEstado("1");
                             vdao.guardarVenta(ve);
-                            //Guardar detalle de Venta
+                            
+                                //Guardar detalle de Venta
+                            
                             int idv=Integer.parseInt(vdao.IdVentas());
                             for (int i =0; i < lista.size(); i++){
                                 ve=new Venta();
@@ -225,7 +230,7 @@ public class Controlador extends HttpServlet {
                             numeroserie=vdao.GenerarSerie();
                             if(numeroserie==null){
                                 numeroserie="00000001";
-                                request.setAttribute("nserie",numeroserie);
+                                request.setAttribute("nserie", numeroserie);
                             }
                             else{
                                 int incrementar=Integer.parseInt(numeroserie);

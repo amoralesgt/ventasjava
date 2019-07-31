@@ -14,7 +14,7 @@ public class VentaDAO {
     ResultSet rs;
     int r;
     public String GenerarSerie(){
-    String numeroserie=" ";
+    String numeroserie="";
     String sql="SELECT max(NumeroSerie) FROM ventas";
     try{
         con=cn.Conexion();
@@ -29,7 +29,7 @@ public class VentaDAO {
     }
     
     public String IdVentas(){
-            String idventas=" ";
+            String idventas="";
             String sql="SELECT max(IdVentas) FROM ventas";
             try{
                 con=cn.Conexion();
