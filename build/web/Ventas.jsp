@@ -83,7 +83,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                            <c:forEach var="list" items="${ls}">
+                            <c:forEach var="list" items="${lista}">
                                 <tr>
                                     <td>${list.getItem()}</td>
                                     <td>${list.getId()}</td>
@@ -103,7 +103,7 @@
                     </div>
                         <div class="card-footer d-flex">
                             <div class="col-sm-6">
-                                <input type="submit" name="accion" value="Procesar" class="btn btn-success">
+                                <a href="Controlador?menu=Ventas&&accion=Procesar" class="btn btn-success">Procesar</a>
                                 <input type="submit" name="accion" value="Cancelar" class="btn btn-danger">
                             </div>
                             <div class="col-sm-3 ml-auto">

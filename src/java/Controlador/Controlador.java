@@ -174,8 +174,9 @@ public class Controlador extends HttpServlet {
                             pr.setId(id);
                             pr=pdao.buscar(id);
                             request.setAttribute("pr", pr);
-                            request.setAttribute("ls", lista);
+                            request.setAttribute("lista", lista);
                             request.setAttribute("tp", totalPagar);
+                            request.setAttribute("cl", cl);
                         break;
                         case "Agregar":
                             request.setAttribute("cl", cl);
@@ -198,7 +199,7 @@ public class Controlador extends HttpServlet {
                                 totalPagar=totalPagar +lista.get(i).getSubtotal();
                             }
                             request.setAttribute("tp", totalPagar);
-                            request.setAttribute("ls", lista);
+                            request.setAttribute("lista", lista);
                         break;
                         case "Procesar":
                             //Guardar la Venta
