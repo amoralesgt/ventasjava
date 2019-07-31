@@ -31,8 +31,22 @@ public class ProductoDAO {
             }
         }catch (Exception e){
         }
-        return pr;
+        return pr;    
     }
+    
+    public int actualizarstock(int id, int stock){
+        String sql="update producto set Stock=? where idProducto=?";       
+    try{
+            con=cn.Conexion();
+            ps=con.prepareStatement(sql);
+            ps.setInt(1, stock);
+            ps.setInt(2, id);
+            ps.executeUpdate();
+        } catch (Exception e){
+        }
+        return r;
+    }
+    
     //Operaciones CRUD
     
     public List listar(){

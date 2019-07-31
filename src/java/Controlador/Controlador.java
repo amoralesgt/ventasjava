@@ -205,6 +205,15 @@ public class Controlador extends HttpServlet {
                             request.setAttribute("nserie", numeroserie);
                         break;
                         case "Procesar":
+                            for(int i =0; i < lista.size(); i++){
+                                Producto pr=new Producto();
+                                int cantidad=lista.get(i).getCantidad();
+                                int idproducto=lista.get(i).getIdproducto();
+                                ProductoDAO aO=new ProductoDAO();
+                                aO.buscar(idproducto);
+                                int ast=pr.getStock()-cantidad;
+                                aO.actualizarstock(idproducto, ast);
+                            }
                             //Guardar la Venta
                             ve.setIdcliente(cl.getId());
                             ve.setIdusuario(4);
