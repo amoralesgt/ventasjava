@@ -219,7 +219,7 @@ public class Controlador extends HttpServlet {
                                 ve.setCantidad(lista.get(i).getCantidad());
                                 ve.setPrecio(lista.get(i).getPrecio());
                                 vdao.guardarDetalleventa(ve);                              
-                            }
+                            }                         
                         break;  
                         default:
                             numeroserie=vdao.GenerarSerie();
