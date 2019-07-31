@@ -210,7 +210,7 @@ public class Controlador extends HttpServlet {
                                 int cantidad=lista.get(i).getCantidad();
                                 int idproducto=lista.get(i).getIdproducto();
                                 ProductoDAO aO=new ProductoDAO();
-                                aO.buscar(idproducto);
+                                pr=aO.buscar(idproducto);
                                 int ast=pr.getStock()-cantidad;
                                 aO.actualizarstock(idproducto, ast);
                             }
