@@ -14,7 +14,7 @@
                 <form action="Controlador?menu=Producto" method="POST">
                     <div class="form-group">
                         <label>NOMBRES</label>
-                        <input type="text" value="${producto.getNombres()}"name="txtNombres" class="form-control">
+                        <input type="text" value="${producto.getNombres()}"name="txtNombre" class="form-control">
                     </div>
                     <div class="form-group">
                         <label>PRECIO</label>

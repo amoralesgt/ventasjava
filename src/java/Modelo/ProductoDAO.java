@@ -56,7 +56,7 @@ public class ProductoDAO {
         return lista;
     }
     public int agregar(Producto pr){
-        String sql="insert into producto(Nombres, Precio, Stock, Estado) values (?,?,?,?,?)";
+        String sql="insert into producto(Nombres, Precio, Stock, Estado) values (?,?,?,?)";
         try{
             con=cn.Conexion();
             ps=con.prepareStatement(sql);

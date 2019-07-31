@@ -94,8 +94,8 @@ public class Controlador extends HttpServlet {
                     case "Actualizar":
                         stock1=Integer.parseInt(request.getParameter("txtStock"));
                         precio1=Double.parseDouble(request.getParameter("txtPrecio"));
-                        String nombres=request.getParameter("txtNombres");
-                        String estados=request.getParameter("txtEstados");
+                        String nombres=request.getParameter("txtNombre");
+                        String estados=request.getParameter("txtEstado");
                         pr.setNombres(nombres);
                         pr.setPrecio(precio1);
                         pr.setStock(stock1);
